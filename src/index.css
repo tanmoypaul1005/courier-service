@@ -1,0 +1,310 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/*====================================================================
+                   custom fonts configuration 
+======================================================================*/
+/* bold-italic */
+@font-face {
+  font-family: "fEuclidLimadiBoldItalic";
+  font-weight: 700;
+  src: local("poppins"), url(./app/fonts/Euclid\ Circular\ B\ Bold\ Italic.ttf) format("truetype");
+  font-style: italic;
+}
+
+/* bold */
+@font-face {
+  font-family: "fEuclidLimadiBold";
+  font-weight: 700;
+  src: local("poppins"), url(./app/fonts/Euclid\ Circular\ B\ Bold.ttf) format("truetype");
+  font-style: normal;
+}
+
+/* light */
+@font-face {
+  font-family: "fEuclidLimadiLight";
+  font-weight: 300;
+  src: local("poppins"), url(./app/fonts/Euclid\ Circular\ B\ Light.ttf) format("truetype");
+  font-style: normal;
+}
+
+/* light-italic */
+@font-face {
+  font-family: "fEuclidLimadiLightItalic";
+  font-weight: 300;
+  src: local("poppins"), url(./app/fonts/Euclid\ Circular\ B\ Light\ Italic.ttf) format("truetype");
+  font-style: italic;
+}
+
+/* medium */
+@font-face {
+  font-family: "fEuclidLimadiMedium";
+  font-weight: 500;
+  src: local("poppins"), url(./app/fonts/Euclid\ Circular\ B\ Medium.ttf) format("truetype");
+  font-style: normal;
+}
+
+/* medium-italic */
+@font-face {
+  font-family: "fEuclidLimadiMediumItalic";
+  font-weight: 500;
+  src: local("poppins"), url(./app/fonts/Euclid\ Circular\ B\ Medium\ Italic.ttf) format("truetype");
+  font-style: italic;
+}
+
+/* regular */
+@font-face {
+  font-family: "fEuclidLimadiRegular";
+  font-weight: 400;
+  src: local("poppins"), url(./app/fonts/Euclid\ Circular\ B\ Regular.ttf) format("truetype");
+  font-style: normal;
+}
+
+/* regular-italic */
+@font-face {
+  font-family: "fEuclidLimadiRegularItalic";
+  font-weight: 400;
+  src: local("poppins"), url(./app/fonts/Euclid\ Circular\ B\ Italic.ttf) format("truetype");
+  font-style: italic;
+}
+
+/* semibold */
+@font-face {
+  font-family: "fEuclidLimadiSemibold";
+  font-weight: 600;
+  src: local("poppins"), url(./app/fonts/Euclid\ Circular\ B\ SemiBold.ttf) format("truetype");
+  font-style: normal;
+}
+
+/* semibold-italic */
+@font-face {
+  font-family: "fEuclidLimadiSemiboldItalic";
+  font-weight: 600;
+  src: local("poppins"), url(./app/fonts/Euclid\ Circular\ B\ SemiBold\ Italic.ttf) format("truetype");
+  font-style: italic;
+}
+
+
+
+/* ====================================================================
+            custom styles for Limadi WEB
+====================================================================*/
+
+.limadi-font-bold-italic {
+  font-family: 'fEuclidLimadiBoldItalic';
+}
+
+.limadi-font-bold {
+  font-family: 'fEuclidLimadiBold';
+}
+
+.limadi-font-light {
+  font-family: 'fEuclidLimadiLight';
+}
+
+.limadi-font-light-italic {
+  font-family: 'fEuclidLimadiLightItalic';
+}
+
+.limadi-font-medium {
+  font-family: 'fEuclidLimadiMedium';
+}
+
+.limadi-font-medium-italic {
+  font-family: 'fEuclidLimadiMediumItalic';
+}
+
+.limadi-font-regular {
+  font-family: 'fEuclidLimadiRegular';
+}
+
+.limadi-font-regular-italic {
+  font-family: 'fEuclidLimadiRegularItalic';
+}
+
+.limadi-font-semibold {
+  font-family: 'fEuclidLimadiSemibold';
+}
+
+.limadi-font-semibold-italic {
+  font-family: 'fEuclidLimadiSemiboldItalic';
+}
+
+
+
+.custom-text {
+  hyphens: auto;
+  word-wrap: break-word;
+  text-align: justify;
+  white-space: pre-line;
+}
+
+.custom-text::after {
+  content: "-";
+  visibility: hidden;
+  display: inline-block;
+  width: 0;
+}
+
+
+
+
+
+/* ====================================================================
+                            Sidebar fixes
+====================================================================*/
+
+
+/* custom style fixes */
+.z-index-120 {
+  z-index: 120;
+}
+
+.z-index-130 {
+  z-index: 130;
+}
+
+.sidebar-expand-arrow-shadow {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 2px 0px 4px rgba(0, 0, 0, 0.25);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+
+/* ====================================================================
+                            Slider fixes
+====================================================================*/
+.box {
+  position: absolute;
+  cursor: move;
+  /* color: black; */
+  max-width: 170px;
+  border-radius: 6px;
+  padding: 6px;
+  margin: auto;
+  user-select: none;
+}
+
+/* Remove Arrows/Spinners */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 55px;
+  background: #ffffff;
+  outline: none;
+  border: 2px solid #2257AA;
+  border-radius: 999999px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 44px;
+  height: 44px;
+  background-image: url('./images/svg/slider-button-image.svg');
+  border-radius: 999999px;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 44px;
+  height: 44px;
+  background-image: url('./images/svg/slider-button-image.svg');
+  border-radius: 999999px;
+  cursor: pointer;
+}
+
+/* ====================================================================
+                            common styles
+====================================================================*/
+/* table border fix */
+
+.table-border-outer {
+  border-collapse: collapse;
+  border-radius: 10px;
+  border-style: hidden;
+  /* hide standard table (collapsed) border */
+  box-shadow: 0 0 0 1px #D1D0E2;
+  /* this draws the table border  */
+}
+
+.abc {
+  overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+}
+
+@layer components {
+  .limadi-regular {
+    /* for 400 or regular fonts */
+    @apply limadi-font-regular font-normal;
+  }
+
+  .limadi-medium {
+    /* for 500 or medium fonts */
+    @apply limadi-font-medium font-medium;
+  }
+
+  .limadi-semibold {
+    /* for 600 or semibold fonts */
+    @apply limadi-font-semibold font-semibold;
+  }
+
+  .limadi-bold {
+    /* for 700 or bold fonts */
+    @apply limadi-font-bold font-bold;
+  }
+
+
+  .title {
+    @apply text-fs28 text-cMainBlack limadi-semibold
+  }
+
+  .sub-title {
+    @apply text-fs24 text-cMainBlack limadi-medium
+  }
+
+  .cp {
+    @apply cursor-pointer
+  }
+
+  .table-title {
+    @apply text-fs14 text-cMainBlack limadi-bold
+  }
+  
+  .table-info {
+    @apply text-fs14 text-cMainBlack limadi-regular px-1 
+  }
+
+  .info { @apply text-[24px] text-cTextGray limadi-semibold text-center }
+
+}

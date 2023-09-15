@@ -1,0 +1,96 @@
+### Create Request
+
+
+# @host = https://limadi-api.atiar.info/api/v1
+@host = https://dev-api.limadi.dk/api/v1
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1IiwianRpIjoiNzQwYzQxZjkyMTJmNjU2NmNiYWQ5NTA5YmQxY2U2ZTljZGY1NTlhM2VkMzExNzFhZjU0YjMxNjYxZThmYjIyOWM4N2FlYjk2NjZjMjBmNjUiLCJpYXQiOjE2ODIzOTk1MTkuMzkyMjEzMTA2MTU1Mzk1NTA3ODEyNSwibmJmIjoxNjgyMzk5NTE5LjM5MjIxNTk2NzE3ODM0NDcyNjU2MjUsImV4cCI6MTcxNDAyMTkxOS4yMTU5ODc5MjA3NjExMDgzOTg0Mzc1LCJzdWIiOiI4MiIsInNjb3BlcyI6W119.TXM0qs9Lo-rvQwTBB8gTxS5n5y732vykDZM4DiBhHaZLfqvaN8_A7v8IsFvkj37j4CQRDMg8H92sAazY7wgS5mHYjqNvEPlDC3ZW_n-skgIc8xqhcBMU1W2vJjtJyaCO4ShvM1nKFFqmGumqB_lr1fKcLDoa_sdC6bKPiNVhJesAsbeM_fL0xBKM2IAzTSHQydFyFtQCWoNKEJyDl5dAGhwARdrsYMNeJiMJV5aZAsTMx4v3EG2hYfSp4b6lR5Snvduk0ydmGc-w9eb5dvJXSazWN46Nsz0yGYUSBNE9s1cOqXlnp4z-WJdBMqzkmP0-AvvCaRfEDXRNAloENip2S33ebKXKhgUGmq4DKRhOPlt12jTLpW63YehNxUOFWe_rXV1jC1iYe8GbZtWo1SV445TqT8SbNY6cq1stYmBRWkQZZEjOIBROwkUJc6ueLR5L0EBZ6imp5P1gv3g-TxifGpCAl20j6YMoHHoolPT9ZSQ1IUjnd2Y8vZe9qy2Lnl39VeQmIDJb0XibbeS1w5cpD8D2Wj7RDA5xHCQbRMrdcU72D8ntxIEUc-j6-Sw2J4Me4Ek-PQOhm2Pcw5QHm4fIjGYlUnFL_bSKzXwjx0H4470k9noSqhS0Bej9yZm4SrMrqnuJWOiPLpVFMoPas7z0oYIp6m1Y85Rzp-Q-DGHEcx4
+
+### Login
+POST {{host}}/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "evil@g.com",
+    "password": "P@$$w0rd",
+    "is_web" : 1
+}
+
+####
+
+
+POST {{host}}/request/create
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "id": 1516,
+    "is_web": true,
+    # "action": "submit",
+    "action": "save",
+    # "action": "next",
+    "is_mass": false,
+    "title": "Boxes & Furniture Movement ",
+    "transport_type": "Home Delivery",
+    "typeoftransportation_id": 4,
+    "pickup_date": "03-06-2023",
+    "pickup_start_time": "10:30",
+    "pickup_end_time": "10:45",
+    "pickup_address": "Mirpur-14, Dhaka",
+    "pickup_lat": 23.789,
+    "pickup_lng": 90.456,
+    "pickup_comment": "Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada.",
+    "pickup_attachment": "",
+    "stops": [
+        {
+            "title": "Random Name 01",
+            "address": "Gulisthan",
+            "lat": 23.789,
+            "lng": 90.456,
+            "comment": "Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat.",
+            "attachment": null,
+            "products": [
+                {
+                    "text": "Product Code: 654987329, This product is..."
+                },
+                {
+                    "text": "Product Code: 1111111222, This product is..."
+                }
+            ]
+        },
+        {
+            "title": "Random Name 02",
+            "address": "Gulisthan",
+            "lat": 23.789,
+            "lng": 90.456,
+            "comment": "Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat.",
+            "attachment": null,
+            "products": [
+                {
+                    "text": "Product Code: 65498732955, This product is..."
+                },
+                {
+                    "text": "Product Code: 1111111222333, This product is..."
+                }
+            ]
+        }
+        
+    ],
+    "is_global": true,
+    "invitation_ids": [6,367]
+}
+
+
+### ==============================
+###           Shift Web
+### ==============================
+### Index
+GET {{host}}/shift/web/index 
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "take": 20,
+    "search": "",
+    "order_by": "shift_date_time_raw",
+    "is_asc": 1
+}
